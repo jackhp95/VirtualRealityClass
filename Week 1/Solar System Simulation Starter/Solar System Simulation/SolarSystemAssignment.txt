@@ -1,0 +1,3 @@
+- Add three additional planets, such as Mercury, Venus, and Mars, complete with materials, behaviors, and audio.
+- Adjust the position of the planets to be representative of a simple (partial) model of the solar system.
+- Adjust the two cameras so the solar system is visible.
