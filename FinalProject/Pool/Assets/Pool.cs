@@ -24,7 +24,7 @@ public class Pool : MonoBehaviour
     void Start()
     {
         // Determine Canvas size -------------------------------------------------I think (buffer - 10) is ((gap - tube) / 2)
-        xPool = (((this.gameObject.transform.GetChild(0).transform.position.x / (2 * buffer))) * 2 * buffer) + 10;
+        xPool = (((this.gameObject.transform.GetChild(0).transform.position.x / (2 * buffer))) * 2 * buffer) + buffer + 20;
         yPool = (((this.gameObject.transform.GetChild(0).transform.position.y / (2 * buffer))) * 2 * buffer) + (buffer / 2);
         zPool = this.gameObject.transform.GetChild(0).transform.position.z;
 
