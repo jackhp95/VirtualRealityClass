@@ -1,0 +1,144 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+using System.Collections;
+
+public class Orbit : MonoBehaviour
+{
+    public Transform target;
+    public GameObject Tube;
+
+    void Start()
+    {
+
+        float x = -90;
+        float y = 0;
+
+        GameObject tip = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+        tip.transform.parent = this.gameObject.transform;
+
+        x = -72;
+
+        while (y < 360)
+        {
+            GameObject six = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            six.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -60;
+        y = 36;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -54;
+        y = 0;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -44;
+        y = 22;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -44;
+        y = 50;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -36;
+        y = 0;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -32;
+        y = 36;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -24;
+        y = 18;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 36;
+        }
+        
+        x = -18;
+        y = 0;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+
+        x = -16;
+        y = 36;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 72;
+        }
+ 
+        x = -8;
+        y = 18;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 36;
+        }
+ 
+        x = 0;
+        y = 0;
+
+        while (y < 360)
+        {
+            GameObject childObject = Instantiate(Tube, Tube.transform.position, Quaternion.Euler(x, y, 0));
+            childObject.transform.parent = this.gameObject.transform;
+            y += 36;
+        }
+
+    }
+    void Update()
+    {
+        this.gameObject.transform.position = target.position;
+    }
+}

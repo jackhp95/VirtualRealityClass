@@ -5,8 +5,12 @@ using System.Collections.Generic;
 public class PointDistribution : MonoBehaviour
 {
     public GameObject tube;
+
     void Start()
     {
+        //allow Resource.LoadAll to just return a list of objects (filtered to only have materials in)
+        Object[] materials = Resources.LoadAll("POTUSes", typeof(Material));
+
         float scaling = 3;
         Vector3[] pts = PointsOnSphere(128);
         List<GameObject> uspheres = new List<GameObject>();
@@ -20,6 +24,7 @@ public class PointDistribution : MonoBehaviour
             uspheres[i].transform.localScale = new Vector3(1, 1, 1);
             // uspheres[i].transform.parent = transform;
             uspheres[i].transform.position = value * scaling;
+            uspheres[i].GetComponentInChildren<Renderer>().material = (Material)materials[Random.Range(0, materials.Length)];
             i++;
         }
     }
