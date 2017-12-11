@@ -11,7 +11,7 @@ public class PointDistribution : MonoBehaviour
         //allow Resource.LoadAll to just return a list of objects (filtered to only have materials in)
         Object[] materials = Resources.LoadAll("POTUSes", typeof(Material));
 
-        float scaling = 3;
+        float scaling = .25f;
         Vector3[] pts = PointsOnSphere(128);
         List<GameObject> uspheres = new List<GameObject>();
         int i = 0;
@@ -21,7 +21,7 @@ public class PointDistribution : MonoBehaviour
             GameObject a = Instantiate(tube, tube.transform.position, Quaternion.identity);
 
             uspheres.Add(a);
-            uspheres[i].transform.localScale = new Vector3(1, 1, 1);
+            uspheres[i].transform.localScale = new Vector3(.1f, .1f, .1f);
             // uspheres[i].transform.parent = transform;
             uspheres[i].transform.position = value * scaling;
             uspheres[i].GetComponentInChildren<Renderer>().material = (Material)materials[Random.Range(0, materials.Length)];
